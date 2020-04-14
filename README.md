@@ -18,7 +18,7 @@ In order to complete this quickstart, you'll need access to two things.
     3. From there, in the top left choose **Shared Resources**, then **Credentials**
     4. Click on the **Create Credential** button on the top right.
 
-![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/crednetial.png?raw=true)
+![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
 
 ## Azure AD App create
 
