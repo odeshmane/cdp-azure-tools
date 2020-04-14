@@ -89,29 +89,6 @@ az role assignment create --assignee <envName-RangerAudit-clientID> --role 'ba92
 
 ---
 
-## Azure quickstart template for cluster connectivity manager with bastion host for magic SSO
-
-:warning: Creates a bastion host with public ip address. Strictly for proof-of-concept. :warning:
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fcegganesh84%2Fcdp-azure-tools%2Fmaster%2Fazureccmbastiondeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png" />
-</a>
-
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fcegganesh84%2Fcdp-azure-tools%2Fmaster%2Fazureccmbastiondeploy.json" target="_blank">
-    <img src="http://armviz.io/visualizebutton.png"/>
-</a>
-
-1. This template is same as above, except, it creates an extra bastion host (Azure spot instance) with public ip address for Magic SSO purposes.
-2. For Magic SSO to work, run the following commands in two separate terminals. Assumes Mac OS for chrome binary.
-3. The second command will open up a new chrome browser with socks proxy settings pointing to the tunnel set by the first command.
-4. You can login to CDP Public Cloud and can view links from the Datalake and Datahub clusters.
-
-```shell script
-ssh -i adminPrivateKey -CND 1080 adminUsername@publicIpAddress
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --user-data-dir="$HOME/chrome-with-proxy" --proxy-server="socks5://localhost:1080"
-```
-
-
 # Changelog
 
 1. Rename admin to dataAccess. (02/20/2020)
