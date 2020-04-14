@@ -26,7 +26,7 @@ In order to complete this quickstart, you'll need access to two things.
 
 Login to Azure portal and open "cloud shell" 
 
-![Azure Cloud shell](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot1.png?raw=true)
+![Azure Cloud shell](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/azure-shell.png?raw=true)
 
 Get subscription ID and Tenant ID by running the command below.
 
@@ -35,7 +35,7 @@ Get subscription ID and Tenant ID by running the command below.
 
 The output of this command is as below:
 
-![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot2.png?raw=true)
+![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/sub-tenant-ID.png.png?raw=true)
 
 Create an app in Azure AD and assign 'Contributor' role at subscription level
 
@@ -44,7 +44,7 @@ Create an app in Azure AD and assign 'Contributor' role at subscription level
 Note: Replace subscriptionId with the subscriptionId from #1
 
 The output of this command is as below:
-![Output after app create](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot3.png?raw=true)
+![Output after app create](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/app-output.png?raw=true)
 
 ## Azure quickstart template
 
@@ -60,7 +60,7 @@ Click ' Deploy to Azure' (#3) and login to your subscription to create essential
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-![Deploy To Azure](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot4.png?raw=true)
+![Deploy To Azure](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/deployment.png?raw=true)
 ---
 
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
@@ -73,7 +73,7 @@ objectID - For all managed identities created in #3. envName-Assumer-objectID, e
 Note: envName is the value you used for Environment Name in #3. 
 (Refer the screenshot below for sample envName-Assumer-objectID)
 
-![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot5.png?raw=true)
+![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
 
 
 ## Assumer identity role assignment
