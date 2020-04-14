@@ -35,7 +35,7 @@ Get subscription ID and Tenant ID by running the command below.
 
 The output of this command is as below:
 
-![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/sub-tenant-ID.png.png?raw=true)
+![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/sub-tenant-ID.png?raw=true)
 
 Create an app in Azure AD and assign 'Contributor' role at subscription level
 
