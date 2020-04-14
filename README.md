@@ -1,5 +1,6 @@
 # cdp-azure-quickstart
 
+#### Step 1. Verifying access to CDP console
 ![CDP Landing Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot6.png?raw=true)
 
 If you've reached the above landing page for the first time, you've come to the right place! In this quickstart, we're going to walkthrough step by step how to connect CDP to your Azure subscription so that you can begin to provision clusters and workloads. 
@@ -9,18 +10,6 @@ In order to complete this quickstart, you'll need access to two things.
   1. The CDP console (if you've reached the above screen, you're good to go there)
   2. The Azure console
   3. Azure Cloud shell
-
-#### Step 1. Creating a CDP Credential
-
-  - In the CDP Console, the first thing we're going to do is create our CDP Credential.  The CDP credential is the mechanism that allows CDP to create resources inside your Cloud Account.  
-    1. From the CDP Home Screen, click the **Management Console** icon. 
-    2. On the left side navigation plane, go to **Environments**
-    3. From there, in the top left choose **Shared Resources**, then **Credentials**
-    4. Click on the **Create Credential** button on the top right.
-
-![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
-
-- In the Azure Console (keep the CDP screen open a different tab or window), we're going to create Azure AD App that will be used to create CDP credential and used for deployment.
 
 #### Step 2.  How to create Azure AD App create
 
@@ -45,6 +34,20 @@ Note: Replace subscriptionId with the subscriptionId from #1
 
 The output of this command is as below:
 ![Output after app create](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/app-output.png?raw=true)
+
+#### Step 3. Creating a CDP Credential
+
+  - In the CDP Console, the first thing we're going to do is create our CDP Credential.  The CDP credential is the mechanism that allows CDP to create resources inside your Cloud Account.  
+    1. From the CDP Home Screen, click the **Management Console** icon. 
+    2. On the left side navigation plane, go to **Environments**
+    3. From there, in the top left choose **Shared Resources**, then **Credentials**
+    4. Click on the **Create Credential** button on the top right.
+
+![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
+
+- Provide the different values catured for subscriptionID, TenantID, AppID, Password in the steps above and click Create.
+
+![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/create-app1.png?raw=true)
 
 ## Azure quickstart template
 
