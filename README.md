@@ -4,6 +4,10 @@ A set of tools to help use Cloudera CDP with Microsoft Azure:
 
 ## Azure AD App create
 
+Login to Azure portal and open "cloud shell" 
+
+![Azure Cloud shell](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot1.png?raw=true)
+
 Get subscription ID and Tenant ID by running the command below.
 
 #1
