@@ -13,6 +13,8 @@ Get subscription ID and Tenant ID by running the command below.
 #1
 ```az account list|jq '.[]|{"name": .name, "subscriptionId": .id, "tenantId": .tenantId, "state": .state}'```
 
+The output of this command is as below:
+
 ![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot2.png?raw=true)
 
 Create an app in Azure AD and assign 'Contributor' role at subscription level
@@ -21,7 +23,7 @@ Create an app in Azure AD and assign 'Contributor' role at subscription level
 ```az ad sp create-for-rbac --name http://cloudbreak-app --role Contributor --scopes /subscriptions/{subscriptionId}```
 Note: Replace subscriptionId with the subscriptionId from #1
 
-
+The output of this command is as below:
 ![Output after app create](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot3.png?raw=true)
 
 ## Azure quickstart template
