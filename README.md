@@ -49,8 +49,11 @@ following role assignments need to be performed via CLI or UI.**
 Have below details ready before running the commands below and replace them as appropriate.
 
 subscriptionId - generated from #1
-clientID 4 managed identities for envName-Assumer-objectID, envName-DataAccess-objectID, envName-Logger-objectID, envName-RangerAudit-objectID from #3 Note: envName is the value you used in #3 
-(Refer the screenshot below for sample Assumer-principleID)
+objectID - For all managed identities created in #3. envName-Assumer-objectID, envName-DataAccess-objectID, envName-Logger-objectID, envName-RangerAudit-objectID
+Note: envName is the value you used for Environment Name in #3. 
+(Refer the screenshot below for sample envName-Assumer-objectID)
+
+![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot5.png?raw=true)
 
 
 ## Assumer identity role assignment
