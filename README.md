@@ -20,7 +20,9 @@ In order to complete this quickstart, you'll need access to two things.
 
 ![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
 
-## Azure AD App create
+- In the Azure Console (keep the CDP screen open a different tab or window), we're going to create Azure AD App that will be used to create CDP credential and used for deployment.
+
+#### Step 2.  How to create Azure AD App create
 
 Login to Azure portal and open "cloud shell" 
 
