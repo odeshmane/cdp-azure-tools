@@ -10,8 +10,19 @@ In order to complete this quickstart, you'll need access to two things.
   2. The Azure console
   3. Azure Cloud shell
 
+#### Step 1. Creating a CDP Credential
 
-## Azure AD App create
+  - In the CDP Console, the first thing we're going to do is create our CDP Credential.  The CDP credential is the mechanism that allows CDP to create resources inside your Cloud Account.  
+    1. From the CDP Home Screen, click the **Management Console** icon. 
+    2. On the left side navigation plane, go to **Environments**
+    3. From there, in the top left choose **Shared Resources**, then **Credentials**
+    4. Click on the **Create Credential** button on the top right.
+
+![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
+
+- In the Azure Console (keep the CDP screen open a different tab or window), we're going to create Azure AD App that will be used to create CDP credential and used for deployment.
+
+#### Step 2.  How to create Azure AD App create
 
 Login to Azure portal and open "cloud shell" 
 
