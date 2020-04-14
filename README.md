@@ -1,6 +1,15 @@
-# Cloudera CDP Tools for Microsoft Azure
+# cdp-azure-quickstart
 
-A set of tools to help use Cloudera CDP with Microsoft Azure:
+![CDP Landing Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot6.png?raw=true)
+
+If you've reached the above landing page for the first time, you've come to the right place! In this quickstart, we're going to walkthrough step by step how to connect CDP to your AWS account so that you can begin to provision clusters and workloads. 
+
+In order to complete this quickstart, you'll need access to two things.  
+
+  1. The CDP console (if you've reached the above screen, you're good to go there)
+  2. The Azure console
+  3. Azure Cloud shell
+
 
 ## Azure AD App create
 
