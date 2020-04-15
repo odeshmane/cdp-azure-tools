@@ -90,21 +90,9 @@ az role assignment create --assignee <envName-Assumer-objectID> --role '9980e02c
 
 ## Fine grained logger/dataAccess/ranger identity role assignment
 
-```bash
-# Assign Storage Blob Data Contributor role to the loggerIdentity principal at logs filesystem scope
-az role assignment create --assignee <envName-Logger-objectID> --role 'ba92f5b4-2d11-453d-a403-e96b0029c9fe' --scope "/subscriptions/<subscriptionId>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<sa-name>/blobServices/default/containers/logs"
-```
+- Get the values for SubscriptionID, rg-name (Resource Group), sa-name (Storage Account), Object IDs for all Managed Identities that you created above.
 
-```bash
-# Assign Storage Blob Data Owner role to the dataAccessIdentity principal at logs/data filesystem scope
-az role assignment create --assignee <envName-DataAccess-objectID> --role 'b7e6dc6d-f1e8-4753-8033-0f276bb0955b' --scope "/subscriptions/<subscriptionId>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<sa-name>/blobServices/default/containers/data"
-az role assignment create --assignee <envName-DataAccess-objectID> --role 'b7e6dc6d-f1e8-4753-8033-0f276bb0955b' --scope "/subscriptions/<subscriptionId>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<sa-name>/blobServices/default/containers/logs"
-```
-
-```bash
-# Assign Storage Blob Data Contributor role to the rangerIdentity principal at data filesystem scope
-az role assignment create --assignee <envName-RangerAudit-objectID> --role 'ba92f5b4-2d11-453d-a403-e96b0029c9fe' --scope "/subscriptions/<subscriptionId>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<sa-name>/blobServices/default/containers/data"
-```
+- Replace these values in the shell script ***azure-msi_role_assign.sh*** and run the script on Azure shell.
 
 ---
 
