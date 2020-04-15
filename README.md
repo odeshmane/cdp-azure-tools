@@ -95,7 +95,7 @@ If you complete step5, that means you have already created all required Azure re
 
 #### Step 6. Creating a CDP Credential
 
-  - In the CDP Console, the first thing we're going to do is create our CDP Credential.  The CDP credential is the mechanism that allows CDP to create resources inside your Cloud Account.  
+ In the CDP Console, the first thing we're going to do is create our CDP Credential.  The CDP credential is the mechanism that allows CDP to create resources inside your Cloud Account.  
     1. From the CDP Home Screen, click the **Management Console** icon. 
     2. On the left side navigation plane, go to **Environments**
     3. From there, in the top left choose **Shared Resources**, then **Credentials**
