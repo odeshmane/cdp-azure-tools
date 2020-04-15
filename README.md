@@ -82,10 +82,10 @@ following role assignments need to be performed via CLI or UI.**
 
 Be ready with the values for below resources.
 
-<subscriptionId>, <rg-name>, <sa-name> - All of these values you already noted down above.
-Get objectID value for all managed identities created in #3. <envName-AssumerIdentity> , <envName-DataAccessIdentity> , <envName-LoggerIdentity> , <envName-RangerIdentity>
+subscriptionId, rg-name, sa-name - All of these values you already noted down above.
+Get objectID value for all managed identities created in #3. envName-AssumerIdentity , envName-DataAccessIdentity , envName-LoggerIdentity , envName-RangerIdentity
 Note: envName is the value you used for Environment Name in #3. 
-(Refer the screenshot below for fetching objectID for <envName-AssumerIdentity>. Similarly, you can get it for other identities)
+(Refer the screenshot below for fetching objectID for envName-AssumerIdentity. Similarly, you can get it for other identities)
 
 ![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
 
