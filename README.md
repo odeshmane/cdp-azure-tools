@@ -78,16 +78,6 @@ Note: envName is the value you used for Environment Name in #3.
 
 ![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
 
-
-## Assumer identity role assignment
-
-```bash
-# Assign Managed Identity Operator role to the assumerIdentity principal at subscription scope
-az role assignment create --assignee <envName-Assumer-objectID> --role 'f1a07417-d97a-45cb-824c-7a7467783830' --scope '/subscriptions/<subscriptionId>'
-# Assign Virtual Machine Contributor role to the assumerIdentity principal at subscription scope
-az role assignment create --assignee <envName-Assumer-objectID> --role '9980e02c-c2be-4d73-94e8-173b1dc7cf3c' --scope '/subscriptions/<subscriptionId>'
-```
-
 ## Fine grained logger/dataAccess/ranger identity role assignment
 
 - Get the values for SubscriptionID, rg-name (Resource Group), sa-name (Storage Account), Object IDs for all Managed Identities that you created above.
