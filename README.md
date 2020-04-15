@@ -88,7 +88,8 @@ Note: envName is the value you used for Environment Name in #3.
 ![Role Assignment](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/role-assignment.png?raw=true)
 
 #### Step 5. Create SSH public key OR locate one if you already have
-You can find more details on SSH key requirement ![here](https://docs.cloudera.com/management-console/cloud/environments-azure/topics/mc-azure-env-ssh-key.html) 
+You can find more details on SSH key requirement below
+![here](https://docs.cloudera.com/management-console/cloud/environments-azure/topics/mc-azure-env-ssh-key.html) 
 You can create one using PuttyGen (Windows) or by running ***ssh-keygen -t rsa*** (Linux/Mac)
 
 If you complete step5, that means you have already created all required Azure resources for this quickstart.
