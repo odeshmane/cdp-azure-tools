@@ -132,17 +132,17 @@ If you complete step5, that means you have already created all required Azure re
     11. Under *select network* choose **<vnet-name>** that was created in step3.
     12. Under *Security Access Settings* choose **Create New Security Groups**
     
-        ![Network](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/network.png?raw=true). 
+   ![Network](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/network.png?raw=true). 
         
     13. Under *SSH Settings*, choose *New SSH Public Key* and provide the key that you created in Step5.
     
     14. Under *Logs - Storage and Audit*, choose the <rg-name -envName-LoggerIdentity> under *Logger Identity*, for logs location base choose **logs@<sa-name>**, and for *Ranger Audit Role* choose **<rg-name -envName-RangerIdentity>**
     
-        ![logs](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/logs.png?raw=true).
+  ![logs](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/logs.png?raw=true).
 	
     15.  Under *Data Access*, choose the <rg-name -envName-AssumerIdentity> under *Assumer Identity*, for storage location base choose **data@<sa-name>**, and for *Data Access Identity* choose **<rg-name -envName-DataAccessIdentity>**
     
-        ![data](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/data.png?raw=true).
+  ![data](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/data.png?raw=true).
 	
     16. (optional) Provide any tags you'd like these resources to be tagged with. 
 
