@@ -26,6 +26,8 @@ The output of this command is as below:
 
 ![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/sub-tenant-ID.png?raw=true)
 
+Please note down SubscriptionID and TenantID -> You will need these values later.
+
 Create an app in Azure AD and assign 'Contributor' role at subscription level
 
 #2
@@ -64,6 +66,7 @@ Click ' Deploy to Azure' (#3) and login to your subscription to create essential
 </a>
 
 ![Deploy To Azure](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/deployment.png?raw=true)
+
 ---
 
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
@@ -80,9 +83,19 @@ Note: envName is the value you used for Environment Name in #3.
 
 ## Fine grained logger/dataAccess/ranger identity role assignment
 
-- Get the values for SubscriptionID, rg-name (Resource Group), sa-name (Storage Account), Object IDs for all Managed Identities that you created above.
+- Download the script from ![script](https://raw.githubusercontent.com/odeshmane/cdp-azure-tools/master/azure_msi_role_assign.sh)
 
-- Replace these values in the shell script ***azure-msi_role_assign.sh*** and run the script on Azure shell.
+- Replace the values in the script with the values with the values you noted in the previous steps.
+
+SubscriptionID - You noted this value in step#
+rg-name (Resource Group)- You noted this value in step#
+sa-name (Storage Account)- You noted this value in step#
+Object IDs for all Managed Identities- You noted these values in step#
+
+![Role Assignment](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/role-assignment.png?raw=true)
+
+
+- Replace these values in the shell script ***azure-msi_role_assign.sh*** ```https://github.com/odeshmane/cdp-azure-tools/blob/master/azure_msi_role_assign.sh``` and run the script on Azure shell.
 
 ---
 
