@@ -67,17 +67,25 @@ Click ' Deploy to Azure' (#3) and login to your subscription to create essential
 
 ![Deploy To Azure](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/deployment.png?raw=true)
 
+The Environment name that you provide is referred as <envName> going forward.
+
+This step is going to create resources with the names as below, please note down these values as you will need them later.
+
+Resource group: <rg-name> - Resource Group name that you provided when creating a new one in this step.
+Storage Account: <sa-name> - Environment name that you provided in this step.
+vnet: <vnet-name> - Environment name that you provied in this step.
+4 Managed Identities: <envName-AssumerIdentity> , <envName-DataAccessIdentity> , <envName-LoggerIdentity> , <envName-RangerIdentity>
 ---
 
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
 following role assignments need to be performed via CLI or UI.**
 
-Have below details ready before running the commands below and replace them as appropriate.
+Be ready with the values for below resources.
 
-subscriptionId - generated from #1
-objectID - For all managed identities created in #3. envName-Assumer-objectID, envName-DataAccess-objectID, envName-Logger-objectID, envName-RangerAudit-objectID
+<subscriptionId>, <rg-name>, <sa-name> - All of these values you already noted down above.
+Get objectID value for all managed identities created in #3. <envName-AssumerIdentity> , <envName-DataAccessIdentity> , <envName-LoggerIdentity> , <envName-RangerIdentity>
 Note: envName is the value you used for Environment Name in #3. 
-(Refer the screenshot below for sample envName-Assumer-objectID)
+(Refer the screenshot below for fetching objectID for <envName-AssumerIdentity>. Similarly, you can get it for other identities)
 
 ![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
 
@@ -85,17 +93,14 @@ Note: envName is the value you used for Environment Name in #3.
 
 - Download the script from ![script](https://raw.githubusercontent.com/odeshmane/cdp-azure-tools/master/azure_msi_role_assign.sh)
 
-- Replace the values in the script with the values with the values you noted in the previous steps.
+- Create a new file in Azure shell with the same name and copy the content of this script in there.
 
-SubscriptionID - You noted this value in step#
-rg-name (Resource Group)- You noted this value in step#
-sa-name (Storage Account)- You noted this value in step#
-Object IDs for all Managed Identities- You noted these values in step#
+- Replace the values in the script.
+
+- Run the script on Azure shell ***sh azure_msi_role_assign.sh***
 
 ![Role Assignment](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/role-assignment.png?raw=true)
 
-
-- Replace these values in the shell script ***azure-msi_role_assign.sh*** ```https://github.com/odeshmane/cdp-azure-tools/blob/master/azure_msi_role_assign.sh``` and run the script on Azure shell.
 
 ---
 
