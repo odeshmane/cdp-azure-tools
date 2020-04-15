@@ -111,7 +111,7 @@ If you complete step5, that means you have already created all required Azure re
 ---
 
 #### Step 7. Registering CDP Environment.
--   
+
     1. Head back to CDP Management Console and Navigate to **Environments**
     2. Click **Register Environment**
     3. Provide an environment name and description.  The name can be any valid name. 
