@@ -15,7 +15,7 @@ In order to complete this quickstart, you'll need access to two things.
 
 Login to Azure portal and open "cloud shell" 
 
-![Azure Cloud shell](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/azure-shell.png?raw=true)
+![Azure Cloud shell](screenshots/azure-shell.png?raw=true)
 
 Get subscription ID and Tenant ID by running the command below.
 
