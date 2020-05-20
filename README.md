@@ -55,30 +55,23 @@ Click ' Deploy to Azure' (#3) and login to your subscription to create essential
 
 
 
+
+
 After you click the "Purchase" button, it will take a couple minutes and you will get a Resource Group that looks like this
+
 ![Deployed Resource Group](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/cdp-resourcegroup.png?raw=true)
 
 
-Resource group: <rg-name> - Resource Group name that you provided when creating a new one in this step.
-Storage Account: <sa-name> - Environment name that you provided in this step.
-vnet: <vnet-name> - Environment name that you provied in this step.
-4 Managed Identities: <envName-AssumerIdentity> , <envName-DataAccessIdentity> , <envName-LoggerIdentity> , <envName-RangerIdentity>
 ---
 
 #### Step 4: Fine grained logger/dataAccess/ranger identity role assignment
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
 following role assignments need to be performed via CLI or UI.**
 
-Be ready with the values for below resources.
 
-subscriptionId, rg-name, sa-name - All of these values you already noted down above.
-Get objectID value for all managed identities created in #3. envName-AssumerIdentity , envName-DataAccessIdentity , envName-LoggerIdentity , envName-RangerIdentity
-Note: envName is the value you used for Environment Name in #3. 
-(Refer the screenshot below for fetching objectID for envName-AssumerIdentity. Similarly, you can get it for other identities)
 
-![objectID](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
-
-- Download the script from ![script](https://raw.githubusercontent.com/cpv0310/cdp-azure-tools/master/azure_msi_role_assign.sh)
+- Copy the script azure_msi_role_assign.sh 
+![script](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/role-assignment-script.png?raw=true)
 
 - Create a new file in Azure shell with the same name and copy the content of this script in there.
 
