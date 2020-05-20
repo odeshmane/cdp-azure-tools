@@ -68,18 +68,13 @@ After you click the "Purchase" button, it will take a couple minutes and you wil
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
 following role assignments need to be performed via CLI or UI.**
 
-
-
 - Copy the script azure_msi_role_assign.sh 
-![script](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/role-assignment-script.png?raw=true)
+![Role Assignment](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/role-assignment-script.png?raw=true)
 
-- Create a new file in Azure shell with the same name and copy the content of this script in there.
+- In the script, replace the subscription id with your subscription id and the resource group with the Resource Group name you create in the last step
 
-- Replace the values in the script.
+- Run the script on Azure shell.  Personally, I like to just paste the script into the shell but you can also create a shell script file and execute that from the prompt. 
 
-- Run the script on Azure shell ***sh azure_msi_role_assign.sh***
-
-![Role Assignment](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/role-assignment.png?raw=true)
 
 #### Step 5. Create SSH public key OR locate one if you already have
 You can find more details on SSH key requirement 
