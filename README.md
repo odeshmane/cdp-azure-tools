@@ -1,7 +1,7 @@
 # cdp-azure-quickstart
 
 #### Step 1. Verifying access to CDP console
-![CDP Landing Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/screenshot6.png?raw=true)
+![CDP Landing Page](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/screenshot6.png?raw=true)
 
 If you've reached the above landing page for the first time, you've come to the right place! In this quickstart, we're going to walkthrough step by step how to connect CDP to your Azure subscription so that you can begin to provision clusters and workloads. 
 
@@ -11,38 +11,37 @@ In order to complete this quickstart, you'll need access to two things.
   2. The Azure console
   3. Azure Cloud shell
 
-#### Step 2.  How to create Azure AD App create
+#### Step 2.  How to create Azure AD App
 
 Login to Azure portal and open "cloud shell" 
 
-![Azure Cloud shell](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/azure-shell.png?raw=true)
+![Azure Cloud shell](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/azure-shell.png?raw=true)
 
 Get subscription ID and Tenant ID by running the command below.
 
-#1
 ```az account list|jq '.[]|{"name": .name, "subscriptionId": .id, "tenantId": .tenantId, "state": .state}'```
 
 The output of this command is as below:
 
-![SubscriptionID and TenantID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/sub-tenant-ID.png?raw=true)
+![SubscriptionID and TenantID](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/sub-tenant-ID.png?raw=true)
 
 Please note down SubscriptionID and TenantID -> You will need these values later.
 
 Create an app in Azure AD and assign 'Contributor' role at subscription level
 
-#2
 ```az ad sp create-for-rbac --name http://cloudbreak-app --role Contributor --scopes /subscriptions/{subscriptionId}```
-Note: Replace subscriptionId with the subscriptionId from #1
+
+Note: Replace subscriptionId with the subscriptionId from #1 and replace the cloudbreak-app with something recognizable by you
 
 The output of this command is as below:
-![Output after app create](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/app-output.png?raw=true)
-
+![Output after app create](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/app-output.png?raw=true)
+Save this output above.  You will use it to create your credential in Step 6
 
 #### Step 3: Azure quickstart template
 
 ARM template that deploys essential Azure resources for Cloudera CDP environment.
 
-Click ' Deploy to Azure' (#3) and login to your subscription to create essential resources for CDP deployment in your subscription. These resources include VNet, ADLS Gen2, 4 User Managed Identities. Provide envName on the screen. (refer the screenshot below).
+Click ' Deploy to Azure' (#3) and login to your subscription to create essential resources for CDP deployment in your subscription. These resources include VNet, ADLS Gen2, 4 User Managed Identities. Provide envName on the screen. (refer the screenshot below).  The Environment name that you provide is referred as <envName> going forward.  Environment Name will be used to name the Azure Storage Account and must be unique.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fcegganesh84%2Fcdp-azure-tools%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
@@ -52,11 +51,13 @@ Click ' Deploy to Azure' (#3) and login to your subscription to create essential
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-![Deploy To Azure](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/deployment.png?raw=true)
+![Deploy To Azure](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/deployment.png?raw=true)
 
-The Environment name that you provide is referred as <envName> going forward.
 
-This step is going to create resources with the names as below, please note down these values as you will need them later.
+
+After you click the "Purchase" button, it will take a couple minutes and you will get a Resource Group that looks like this
+![Deployed Resource Group](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/cdp-resourcegroup.png?raw=true)
+
 
 Resource group: <rg-name> - Resource Group name that you provided when creating a new one in this step.
 Storage Account: <sa-name> - Environment name that you provided in this step.
@@ -75,9 +76,9 @@ Get objectID value for all managed identities created in #3. envName-AssumerIden
 Note: envName is the value you used for Environment Name in #3. 
 (Refer the screenshot below for fetching objectID for envName-AssumerIdentity. Similarly, you can get it for other identities)
 
-![objectID](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
+![objectID](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/objectID.png?raw=true)
 
-- Download the script from ![script](https://raw.githubusercontent.com/odeshmane/cdp-azure-tools/master/azure_msi_role_assign.sh)
+- Download the script from ![script](https://raw.githubusercontent.com/cpv0310/cdp-azure-tools/master/azure_msi_role_assign.sh)
 
 - Create a new file in Azure shell with the same name and copy the content of this script in there.
 
@@ -85,7 +86,7 @@ Note: envName is the value you used for Environment Name in #3.
 
 - Run the script on Azure shell ***sh azure_msi_role_assign.sh***
 
-![Role Assignment](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/role-assignment.png?raw=true)
+![Role Assignment](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/role-assignment.png?raw=true)
 
 #### Step 5. Create SSH public key OR locate one if you already have
 You can find more details on SSH key requirement 
@@ -102,11 +103,11 @@ If you complete step5, that means you have already created all required Azure re
     3. From there, in the top left choose **Shared Resources**, then **Credentials**
     4. Click on the **Create Credential** button on the top right.
 
-![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
+![CDP Credential Page](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/credential.png?raw=true)
 
 - Provide the different values catured for subscriptionID, TenantID, AppID, Password in the steps above and click Create.
 
-![CDP Credential Page](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/create-app1.png?raw=true)
+![CDP Credential Page](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/create-app1.png?raw=true)
 
   - The link explains how the credential is going to be used. [here](https://docs.cloudera.com/management-console/cloud/credentials-azure/topics/mc-credential.html).  
 ---
@@ -120,30 +121,30 @@ If you complete step5, that means you have already created all required Azure re
     5. Under *Microsoft Azure Credentials*, chose the credential we created earlier. 
     6. Click **Next**
 
-![Chose credential](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/choose-cred.png?raw=true)
+![Chose credential](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/choose-cred.png?raw=true)
 
 
     7. Under *Data Lake Settings*, give your new Data Lake a name.  The name can be any valid name. Choose the latest Data Lake Version
     8. Choose *Light Duty* for Data Lake scale. 
     9. Click **Next**
     
-  ![Chose credential](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/dl.png?raw=true)
+  ![Chose credential](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/dl.png?raw=true)
   
     10. Choose your desired **region**, this should be the same region you used to deploy resources in Step3.
     11. Under *select network* choose **<vnet-name>** that was created in step3.
     12. Under *Security Access Settings* choose **Create New Security Groups**
     
-   ![Network](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/network.png?raw=true). 
+   ![Network](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/network.png?raw=true). 
         
     13. Under *SSH Settings*, choose *New SSH Public Key* and provide the key that you created in Step5.
     
     14. Under *Logs - Storage and Audit*, choose the <rg-name -envName-LoggerIdentity> under *Logger Identity*, for logs location base choose **logs@<sa-name>**, and for *Ranger Audit Role* choose **<rg-name -envName-RangerIdentity>**
     
-  ![logs](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/logs.png?raw=true).
+  ![logs](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/logs.png?raw=true).
 	
     15.  Under *Data Access*, choose the <rg-name -envName-AssumerIdentity> under *Assumer Identity*, for storage location base choose **data@<sa-name>**, and for *Data Access Identity* choose **<rg-name -envName-DataAccessIdentity>**
     
-  ![data](https://github.com/odeshmane/cdp-azure-tools/blob/master/screenshots/data.png?raw=true).
+  ![data](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/data.png?raw=true).
 	
     16. (optional) Provide any tags you'd like these resources to be tagged with. 
 
