@@ -68,7 +68,7 @@ After you click the "Purchase" button, it will take a couple minutes and you wil
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
 following role assignments need to be performed via CLI or UI.**
 
-- Copy the script azure_msi_role_assign.sh 
+- Copy the script azure_msi_role_assign.sh from this repo
 ![Role Assignment](https://github.com/cpv0310/cdp-azure-tools/blob/master/screenshots/role-assignment-script.png?raw=true)
 
 - In the script, replace the subscription id with your subscription id and the resource group with the Resource Group name you create in the last step
