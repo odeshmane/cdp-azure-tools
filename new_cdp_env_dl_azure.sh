@@ -1,9 +1,11 @@
 #!/bin/sh
 
-export SUBSCRIPTIONID="3b4df54c-3c29-4484-a5bf-a4aee6d2eb0f"
-export AZUREREGION="westcentralus"
-export RESOURCEGROUPNAME="chrisv-dl2"
-export ENVIRONMENTNAME="cpvdl2"
+
+#Set Variables
+export SUBSCRIPTIONID="<SubscriptionID>"
+export AZUREREGION="<AzureRegion>"
+export RESOURCEGROUPNAME="<ResourceGroupName>"
+export ENVIRONMENTNAME="<EnvironmentName>"
 
 #Create Subsctiption and RG
 az account set --subscription $SUBSCRIPTIONID
