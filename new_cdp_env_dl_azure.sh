@@ -27,7 +27,7 @@ az network nsg rule create -g $RESOURCEGROUPNAME --nsg-name "$ENVIRONMENTNAME-NS
 az network nsg rule create -g $RESOURCEGROUPNAME --nsg-name "$ENVIRONMENTNAME-NSG" -n "ssl" --priority 200 \
    --source-port-ranges 443 --destination-address-prefixes '*' --destination-port-ranges 443 --access Allow --protocol Tcp --description "Allow Port 443"
 az network nsg rule create -g $RESOURCEGROUPNAME --nsg-name "$ENVIRONMENTNAME-NSG" -n "cdp-mgmtplane" --priority 300 \
-   --source-port-ranges 8443 --destination-address-prefixes '*' --destination-port-ranges 8443 --access Allow --protocol Tcp --description "Allow CDP Management Plane to access over Port 8443"
+   --source-port-ranges 8443 --destination-address-prefixes '*' --destination-port-ranges 9443 --access Allow --protocol Tcp --description "Allow CDP Management Plane to access over Port 8443"
 
 #Create Subnets
 az network vnet subnet create -g $RESOURCEGROUPNAME --vnet-name "$ENVIRONMENTNAME-Vnet" -n "CDP" --address-prefixes 10.0.0.0/24 --network-security-group "$ENVIRONMENTNAME-NSG"\
