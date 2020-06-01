@@ -31,7 +31,7 @@ Please note down SubscriptionID and TenantID -> You will need these values later
 Create an app in Azure AD and assign 'Contributor' role at subscription level
 
 #2
-```az ad sp create-for-rbac --name http://cloudbreak-app --role Contributor --scopes /subscriptions/{subscriptionId}```
+```az ad sp create-for-rbac --name http://cloudbreak-app --role Owner --scopes /subscriptions/{subscriptionId}```
 Note: Replace subscriptionId with the subscriptionId from #1
 
 The output of this command is as below:
