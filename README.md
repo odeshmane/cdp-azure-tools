@@ -17,6 +17,17 @@ ARM template that deploys essential Azure resources for Cloudera CDP environment
 
 ---
 
+ARM template that deploys essential Azure resources but no vnet (considering vnet is precreated) for Cloudera CDP environment.
+
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fcegganesh84%2Fcdp-azure-tools%2Fmaster%2Fazuredeploy-no-vnet.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png" />
+</a>
+
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fcegganesh84%2Fcdp-azure-tools%2Fmaster%2Fazuredeploy.json" target="_blank">
+    <img src="http://armviz.io/visualizebutton.png"/>
+</a>
+
 **Azure RM templates does not support role assignments at a scope other than resource group. So the
 following role assignments need to be performed via CLI or UI.**
 
